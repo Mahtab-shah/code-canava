@@ -1,0 +1,153 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Containment Check</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .boxA {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            position: absolute; /* Position absolute for easy placement */
+            top: 100px; /* Example position */
+            left: 100px; /* Example position */
+            border: 2px solid #007BFF;
+        }
+
+        .boxB {
+            width: 50%; /* 50% of Box A's width */
+            height: 50%; /* 50% of Box A's height */
+            background-color: lightcoral;
+            position: absolute; /* Position absolute for easy placement */
+            top: 150px; /* Positioning it relative to Box A */
+            left: 150px; /* Positioning it relative to Box A */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="boxA" id="boxA"></div>
+    <div class="boxB" id="boxB"></div>
+
+    <script>
+        function isBoxInside(boxA, boxB) {
+            const rectA = boxA.getBoundingClientRect();
+            const rectB = boxB.getBoundingClientRect();
+
+            // Check if Box B is inside Box A
+            const isInside = (
+                rectB.left >= rectA.left &&
+                rectB.right <= rectA.right &&
+                rectB.top >= rectA.top &&
+                rectB.bottom <= rectA.bottom
+            );
+
+            return isInside;
+        }
+
+        // Get the boxes
+        const boxA = document.getElementById('boxA');
+        const boxB = document.getElementById('boxB');
+
+        // Check if Box B is inside Box A
+        const inside = isBoxInside(boxA, boxB);
+
+        if (inside) {
+            alert("Box B is inside Box A");
+        } else {
+            alert("Box B is NOT inside Box A");
+        }
+    </script>
+</body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Designer with Double Sliders and Lines</title>
+    <link rel="stylesheet" href="codeCanava.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div id="controls">
+            <div>
+                <h2>Controls</h2>
+                <button id="addBoxBtn">Add New Box</button>
+                <button id="generateCode">Generate Code</button>
+                <h2>Generated Code</h2>
+            </div>
+            <div>
+                <button id="div">Div</button>
+
+                <input type="color" name="" id="bgcolor" value="#93a179">
+                <button id="flex">Flex</button>
+                <button id="childDiv">Child Div</button>
+
+            </div>
+
+        </div>
+
+        <div id="designing">
+            <div id="designingArea">
+
+
+                <div id="top">
+
+                    <input type="range" min="0" max="600" value="0" class="horizontal-slider" id="sliderTop1">
+
+                </div>
+
+                <div class="relaDiv">
+                    <div id="left"> l
+                        <input type="range" min="0" max="600" value="0" class="vertical-slider" id="sliderLeft1">
+
+                    </div>
+
+                    <div id="boxesSection">
+                        <div id="thumbLineTop" class="thumb-line"></div>
+                        <div id="thumbLineLeft" class="thumb-line"></div>
+                        <div id="thumbLineRight" class="thumb-line"></div>
+                        <div id="thumbLineBottom" class="thumb-line"></div>
+                    </div>
+
+                    <div id="right"> r
+                        <input type="range" min="0" max="600" value="100" class="vertical-slider" id="sliderRight1">
+                    </div>
+                </div>
+
+                <div id="bottom">
+                    <input type="range" min="0" max="600" value="560" class="horizontal-slider" id="sliderBottom1">
+                </div>
+            </div>
+
+            <div class="bot"></div>
+
+
+        </div>
+    </div>
+
+    <div class="Output">
+        <pre id="codeOutput"></pre>
+    </div>
+
+  <script src="codeCanava.js"></script>
+
+
+</body>
+
+</html>
