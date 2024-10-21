@@ -1,6 +1,4 @@
-
-
- <!-- <!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -72,181 +70,6 @@
 </html> -->
 
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout Designer</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            background-color: #f0f4f8;
-        }
-
-        #controls {
-            width: 280px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #ffffff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            margin-right: 20px;
-        }
-
-        #controls h2 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        #controls button,
-        #controls input {
-            display: block;
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #ffffff;
-            cursor: pointer;
-        }
-
-        #designingArea {
-            flex-grow: 1;
-            height: 630px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #ffffff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .relaDiv {
-            /* border: 2px solid #dfe1e6; */
-            height: 600px;
-            width: 99.8%;
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            background-color: #f8fafc;
-        }
-
-        #top,
-        #bottom {
-            min-height: 60px;
-            height: 10vh;
-            max-height: 80px;
-            background-color: #e9eef3;
-            border: 1px solid #d1d5db;
-            border-radius: 5px;
-        }
-
-        #left,
-        #right {
-            width: 10%;
-            max-width: 80px;
-            min-width: 60px;
-            background-color: #e9eef3;
-            border: 1px solid #d1d5db;
-            border-radius: 5px;
-        }
-
-        #boxesSection {
-            flex-grow: 1;
-            border: 1px solid #ccc;
-            margin: 0 15px;
-            background-color: #ffffff;
-            border-radius: 5px;
-            min-width: 400px;
-        }
-
-        .box {
-            width: 10%;
-            height: 10%;
-            border: 1px solid #ccc;
-            background-color: #ADD8E6;
-            position: absolute;
-            box-sizing: border-box;
-            border-radius: 5px;
-        }
-
-        .resize-handle {
-            width: 10px;
-            height: 10px;
-            background-color: #000;
-            position: absolute;
-        }
-
-        .resize-handle.nw {
-            top: -5px;
-            left: -5px;
-            cursor: nw-resize;
-        }
-
-        .resize-handle.ne {
-            top: -5px;
-            right: -5px;
-            cursor: ne-resize;
-        }
-
-        .resize-handle.sw {
-            bottom: -5px;
-            left: -5px;
-            cursor: sw-resize;
-        }
-
-        .resize-handle.se {
-            bottom: -5px;
-            right: -5px;
-            cursor: se-resize;
-        }
-
-        #codeOutput {
-            border: 1px solid #ccc;
-            padding: 10px;
-            background-color: #f0f4f8;
-            white-space: pre-wrap;
-            border-radius: 5px;
-        }
-
-    </style>
-
-</head>
-
-<body>
-    <div id="controls">
-        <h2>Controls</h2>
-        <button id="addBoxBtn">Add New Box</button>
-        <input type="color" id="colorPicker" value="#ADD8E6" />
-        <button id="generateCodeBtn">Generate Code</button>
-        <h2>Generated Code</h2>
-        <pre id="codeOutput"></pre>
-    </div>
-
-    <div id="designingArea">
-        <div id="top"></div>
-        <div class="relaDiv">
-            <div id="left"></div>
-            <div id="boxesSection"></div>
-            <div id="right"></div>
-        </div>
-        <div id="bottom"></div>
-    </div>
-</body>
-
-</html> -->
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -255,229 +78,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layout Designer with Double Sliders and Lines</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            background-color: #f0f4f8;
-        }
-
-        #controls {
-            width: 280px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #ffffff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            margin-right: 20px;
-        }
-
-        #controls h2 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        #designingArea {
-            flex-grow: 1;
-            height: 630px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #ffffff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .relaDiv {
-            border: 1px solid #0c48df;
-            /* height: 100%; */
-            width: 100%;
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            background-color: #f8fafc;
-        }
-
-        #top,
-        #bottom {
-            width: 100%;
-            min-height: 40px;
-            height: 6vh;
-            max-height: 40px;
-            background-color: #e9eef3;
-            border: 1px solid #d1d5db;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            position: relative;
-        }
-
-        #left,
-        #right {
-            width: 6%;
-            max-width: 80px;
-            min-width: 40px;
-            background-color: #e9eef3;
-            border: 1px solid #d1d5db;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            position: relative;
-        }
-
-        #boxesSection {
-            flex-grow: 1;
-            border: 1px solid #ccc;
-            width: 88%;
-            min-width: 400px;
-            background-color: #ffffff;
-            position: relative;
-        }
-
-        /* Vertical sliders for left and right divs */
-        .vertical-slider {
-            writing-mode: vertical-lr;
-            width: 5px;
-            height: 90%;
-            appearance: none;
-            background-color: #d1d5db;
-        }
-
-        .vertical-slider::-webkit-slider-thumb {
-            appearance: none;
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 20px solid #3498db;
-            cursor: pointer;
-            position: relative;
-        }
-
-        /* Horizontal sliders for top and bottom divs */
-        .horizontal-slider {
-            width: 100%;
-            appearance: none;
-            height: 3px;
-            background-color: #d1d5db;
-        }
-
-        #sliderTop1::-webkit-slider-thumb,
-        #sliderBottom1::-webkit-slider-thumb {
-            appearance: none;
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            cursor: pointer;
-            position: relative;
-        }
-
-        #sliderTop1::-webkit-slider-thumb {
-            border-top: 20px solid #3498db;
-        }
-
-        #sliderBottom1::-webkit-slider-thumb {
-            border-bottom: 20px solid #3498db;
-        }
-
-        /* Line extending from the apex of the triangle thumb */
-        .thumb-line {
-            position: absolute;
-            width: 1px;
-            background-color: rgba(0, 0, 0, 0.412);
-            z-index: 10;
-            margin-top: 2px;
-        }
-    </style>
+    <link rel="stylesheet" href="codeCanava.css">
 </head>
 
 <body>
-    <div id="controls">
-        <h2>Controls</h2>
-        <button id="addBoxBtn">Add New Box</button>
-        <button id="generateCodeBtn">Generate Code</button>
-        <h2>Generated Code</h2>
+    <div class="container">
+
+        <div id="controls">
+            <div>
+                <h2>Controls</h2>
+                <button id="addBoxBtn">Add New Box</button>
+                <button id="generateCode">Generate Code</button>
+                <h2>Generated Code</h2>
+            </div>
+            <div>
+                <button id="div">Div</button>
+
+                <input type="color" name="" id="bgcolor" value="#93a179">
+                <button id="flex">Flex</button>
+                <button id="childDiv">Child Div</button>
+
+            </div>
+
+        </div>
+
+        <div id="designing">
+            <div id="designingArea">
+
+
+                <div id="top">
+
+                    <input type="range" min="0" max="600" value="0" class="horizontal-slider" id="sliderTop1">
+
+                </div>
+
+                <div class="relaDiv">
+                    <div id="left"> l
+                        <input type="range" min="0" max="600" value="0" class="vertical-slider" id="sliderLeft1">
+
+                    </div>
+
+                    <div id="boxesSection">
+                        <div id="thumbLineTop" class="thumb-line"></div>
+                        <div id="thumbLineLeft" class="thumb-line"></div>
+                        <div id="thumbLineRight" class="thumb-line"></div>
+                        <div id="thumbLineBottom" class="thumb-line"></div>
+                    </div>
+
+                    <div id="right"> r
+                        <input type="range" min="0" max="600" value="100" class="vertical-slider" id="sliderRight1">
+                    </div>
+                </div>
+
+                <div id="bottom">
+                    <input type="range" min="0" max="600" value="560" class="horizontal-slider" id="sliderBottom1">
+                </div>
+            </div>
+
+            <div class="bot"></div>
+
+
+        </div>
+    </div>
+
+    <div class="Output">
         <pre id="codeOutput"></pre>
     </div>
 
-    <div id="designingArea">
-        <!-- Top section -->
-        <div id="top">
-            <input type="range" min="0" max="100" value="50" class="horizontal-slider" id="sliderTop1">
-            <div id="thumbLineTop" class="thumb-line"></div>
-        </div>
+  <script src="codeCanava.js"></script>
 
-        <div class="relaDiv">
-            <!-- Left section -->
-            <div id="left">
-                <input type="range" min="0" max="100" value="50" class="vertical-slider" id="sliderLeft1">
-                <div id="thumbLineLeft" class="thumb-line"></div>
-            </div>
 
-            <div id="boxesSection"></div>
-
-            <!-- Right section -->
-            <div id="right">
-                <input type="range" min="0" max="100" value="50" class="vertical-slider" id="sliderRight1">
-                <div id="thumbLineRight" class="thumb-line"></div>
-            </div>
-        </div>
-
-        <!-- Bottom section -->
-        <div id="bottom">
-            <input type="range" min="0" max="100" value="50" class="horizontal-slider" id="sliderBottom1">
-            <div id="thumbLineBottom" class="thumb-line"></div>
-        </div>
-    </div>
-
-    <script>
-        const sliderTop = document.getElementById('sliderTop1');
-        const thumbLineTop = document.getElementById('thumbLineTop');
-        
-        const sliderLeft = document.getElementById('sliderLeft1');
-        const thumbLineLeft = document.getElementById('thumbLineLeft');
-        
-        const sliderRight = document.getElementById('sliderRight1');
-        const thumbLineRight = document.getElementById('thumbLineRight');
-        
-        const sliderBottom = document.getElementById('sliderBottom1');
-        const thumbLineBottom = document.getElementById('thumbLineBottom');
-
-        // Update line position for each slider
-        function updateLine(slider, line, orientation) {
-            const sliderRect = slider.getBoundingClientRect();
-            if (orientation === 'horizontal') {
-                const thumbPosition = slider.value / 100 * sliderRect.width;
-                line.style.top = '100%';
-                line.style.left = thumbPosition + 'px';
-                line.style.height = '100vh';
-            } else {
-                const thumbPosition = slider.value / 100 * sliderRect.height;
-                line.style.top = thumbPosition + 'px';
-                line.style.left = '100%';
-                line.style.width = '100vw';
-            }
-        }
-
-        // Update lines when sliders are moved
-        sliderTop.addEventListener('input', () => updateLine(sliderTop, thumbLineTop, 'horizontal'));
-        sliderLeft.addEventListener('input', () => updateLine(sliderLeft, thumbLineLeft, 'vertical'));
-        sliderRight.addEventListener('input', () => updateLine(sliderRight, thumbLineRight, 'vertical'));
-        sliderBottom.addEventListener('input', () => updateLine(sliderBottom, thumbLineBottom, 'horizontal'));
-
-        // Initialize line positions
-        updateLine(sliderTop, thumbLineTop, 'horizontal');
-        updateLine(sliderLeft, thumbLineLeft, 'vertical');
-        updateLine(sliderRight, thumbLineRight, 'vertical');
-        updateLine(sliderBottom, thumbLineBottom, 'horizontal');
-    </script>
 </body>
 
 </html>
