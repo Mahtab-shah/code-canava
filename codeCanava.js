@@ -52,7 +52,7 @@ let boxsect = document.getElementById('boxesSection');
 let colorpicker = document.getElementById('bgcolor1');
 let codeOutput = document.getElementById('codeOutput');
 let count = 0;
-let  activeEl = boxsect;
+let activeEl = boxsect;
 
 
 function creatElement(element) {
@@ -60,14 +60,14 @@ function creatElement(element) {
     count++;
     let newel = document.createElement(element);
     activeEl.appendChild(newel);
-    newel.className = `c ${element}${count}`;
+    newel.className = `c ${element} ${element}${count}`;
     newel.id = `${element}${count}`
 
     let Width = 70;
     newel.style.width = `${Width}%`;
     newel.style.height = `${40}px`;
 
-    newel.style.border =  `2px solid ${colorpicker.value}`;
+    newel.style.border = `2px solid ${colorpicker.value}`;
 
 
     // let cnt = 0;
@@ -238,25 +238,25 @@ function adjSlider(element) {
     // thumbLineRight.style.top = activeDiv.getBoundingClientRect().bottom - 56;
 
 
-   if (element !== boxsect) {
-    sliderRight.addEventListener('input', () => {
-        activeEl.style.height = `${(Number(sliderRight.value) + 56 -  activeEl.getBoundingClientRect().top) / 6}%`;
-    })
+    if (element !== boxsect) {
+        sliderRight.addEventListener('input', () => {
+            activeEl.style.height = `${(Number(sliderRight.value) + 56 - activeEl.getBoundingClientRect().top) / 6}%`;
+        })
 
 
 
-    sliderBottom.addEventListener('input', () => {
+        sliderBottom.addEventListener('input', () => {
 
-        let Width = Math.abs(Number(sliderBottom.value) / 6);
+            let Width = Math.abs(Number(sliderBottom.value) / 6);
 
-        activeEl.style.width = `${Width}%`;
+            activeEl.style.width = `${Width}%`;
 
-    })
-   }
+        })
+    }
 }
 
 
-boxsect.addEventListener('click' , (event)=>{
+boxsect.addEventListener('click', (event) => {
     adjSlider(boxsect);
     event.stopPropagation();
 
@@ -398,7 +398,7 @@ function setStyle(property, value) {
 function setAttr(name, val) {
     // let attr = document.createAttribute(name);
     // attr.value = val;
-    activeEl.setAttribute(name , val);
+    activeEl.setAttribute(name, val);
 }
 
 function setTag(value) {
@@ -409,8 +409,8 @@ function setTag(value) {
     el.style.background = colorpicker.value;
     activeEl.appendChild(el);
     adjSlider(el);
-    el.addEventListener('click' , (event)=>{
-    adjSlider(el);
+    el.addEventListener('click', (event) => {
+        adjSlider(el);
 
         event.stopPropagation();
 
@@ -418,34 +418,34 @@ function setTag(value) {
 
 }
 
-AttrInp.addEventListener('keydown' , (event)=>{
-if(event.key === 'Enter'){
-    var input = AttrInp.value;
-    var semiCol = AttrInp.length;
+AttrInp.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        var input = AttrInp.value;
+        var semiCol = AttrInp.length;
 
 
-    // for (let i = 0; i < input.length; i++) {
-    //     if (input[i] == ':') {
-    const i = input.match(':' || '=').index;
+        // for (let i = 0; i < input.length; i++) {
+        //     if (input[i] == ':') {
+        const i = input.match(':' || '=').index;
 
-    if (input.match(';')) {
-        semiCol = AttrInp.value.match(';').index;
+        if (input.match(';')) {
+            semiCol = AttrInp.value.match(';').index;
 
+        }
+
+
+        var name = input.slice(0, i).trim();
+        var valu = input.slice(i + 1, semiCol).trim()
+        //     break;
+        // }
+
+
+
+        // console.log("pressed", valu, property);
+
+
+        setAttr(name, valu);
     }
-
-
-    var name = input.slice(0, i).trim();
-    var valu = input.slice(i + 1, semiCol).trim()
-    //     break;
-    // }
-
-
-
-    // console.log("pressed", valu, property);
-
-
-    setAttr( name , valu);
-}
 
 })
 
@@ -456,32 +456,40 @@ TagInp.addEventListener('keydown', (event) => {
     }
 })
 
+
+//
+function styling(inValue) {
+    var input = inValue.value;
+    var semiCol = inValue.length;
+
+
+    // for (let i = 0; i < input.length; i++) {
+    //     if (input[i] == ':') {
+    const i = input.match(':' || '=').index;
+
+    if (input.match(';')) {
+        semiCol = inValue.value.match(';').index;
+
+    }
+
+
+    var property = input.slice(0, i).trim();
+    var value = input.slice(i + 1, semiCol).trim()
+    //     break;
+    // }
+
+
+
+    console.log("pressed", value, property);
+
+    setStyle(property, value);
+}
+
+
+
 styleInp.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-        var input = styleInp.value;
-        var semiCol = styleInp.length;
-
-
-        // for (let i = 0; i < input.length; i++) {
-        //     if (input[i] == ':') {
-        const i = input.match(':').index;
-
-        if (input.match(';')) {
-            semiCol = styleInp.value.match(';').index;
-
-        }
-
-
-        var property = input.slice(0, i).trim();
-        var value = input.slice(i + 1, semiCol).trim()
-        //     break;
-        // }
-
-
-
-        console.log("pressed", value, property);
-
-        setStyle(property, value);
+        styling(styleInp);
     }
 })
 
@@ -493,9 +501,9 @@ styleInp.addEventListener('keydown', (event) => {
 
 let btn = document.getElementById('allBtn').children;
 
-for (let i = 2; i < btn.length; i++) {
-    
-    btn[i].addEventListener('click' , (event)=>{
+for (let i = 2; i < 20; i++) {
+
+    btn[i].addEventListener('click', (event) => {
         creatElement(btn[i].value);
         event.stopPropagation();
 
@@ -503,10 +511,238 @@ for (let i = 2; i < btn.length; i++) {
 }
 
 
+let Style = document.querySelectorAll('.style');
+
+
+// for (let i = 0; i < Style.length; i++) {
+
+//     Style[i].addEventListener('click', (event) => {
+
+//         if (Style[i].value == 'margin') {
+//             let Sec2Inp = document.querySelectorAll('.marginClass > input');
+
+//             document.getElementsByClassName('sec2')[0].style.display = 'grid';
+//             for (let j = 0; j < Sec2Inp.length; j++) {
+
+//                 Sec2Inp[j].addEventListener('input', (event) => {
+//                     let unit;
+
+//                     unit = document.getElementById('unit').value;
+
+//                     // let el = document.getElementById('rangeId');
+//                     let str1 = Sec2Inp[j].placeholder;
+//                     let str2 = Sec2Inp[j].value + unit;
+//                     // console.log(str);
+//                     setStyle(str1, str2);
+
+//                     event.stopPropagation();
+//                 })
+
+//             }
+//         } else if (Style[i].value == 'padding') {
+//             let Sec2Inp = document.querySelectorAll('.paddingClass > input');
+
+//             document.getElementById('paddingId').style.display = 'grid';
+//             // call a fxn which id display none of the other component when this component on
+//             for (let j = 0; j < Sec2Inp.length; j++) {
+
+//                 Sec2Inp[j].addEventListener('input', (event) => {
+//                     let unit;
+
+//                     unit = document.getElementById('unit2').value;
+
+//                     // let el = document.getElementById('rangeId');
+//                     let str1 = Sec2Inp[j].placeholder;
+//                     let str2 = Sec2Inp[j].value + unit;
+//                     // console.log(str);
+//                     setStyle(str1, str2);
+
+//                     event.stopPropagation();
+//                 })
+
+//             }
+//         }
+
+
+//         event.stopPropagation();
+
+//     })
+// }
+
+// activeEl.addEventListener('click' , ()=>{
+//     activeEl.style.background = colorpicker.value;
+// })
+
+
+document.getElementById('css').addEventListener('click', () => {
+    document.getElementsByClassName('cssBtn')[0].style.display = 'grid';
+    document.getElementsByClassName('htmlBtn')[0].style.display = 'none'
+
+
+
+    // Assuming Style is an array of buttons for each CSS property
+    for (let i = 0; i < Style.length; i++) {
+        Style[i].addEventListener('click', (event) => {
+            // Hide all sections first
+            const sections = document.getElementsByClassName('sec2');
+            for (let k = 0; k < sections.length; k++) {
+                sections[k].style.display = 'none';
+            }
+
+            let Sec2Inp; // To hold the input elements
+            let unit; // To hold the unit value
+
+            if (Style[i].value === 'margin') {
+                Sec2Inp = document.querySelectorAll('.marginClass  input');
+                document.getElementById('marginInputs').style.display = 'flex';
+                unit = document.getElementById('margin-unit').value;
+                handleInputEvents(Sec2Inp, unit);
+
+            } else if (Style[i].value === 'padding') {
+                Sec2Inp = document.querySelectorAll('.paddingClass  input');
+                document.getElementById('paddingInputs').style.display = 'flex';
+                unit = document.getElementById('padding-unit').value;
+                handleInputEvents(Sec2Inp, unit);
+
+            } else if (Style[i].value === 'height' || Style[i].value === 'width') {
+                Sec2Inp = document.querySelectorAll('.dimensionClass input');
+                document.getElementById('dimensionInputs').style.display = 'flex';
+                unit = document.getElementById('dimension-unit').value;
+                handleInputEvents(Sec2Inp, unit);
+
+            } else if (Style[i].value === 'color' || Style[i].value === 'bg-color') {
+                Sec2Inp = document.querySelectorAll('.colorClass  input');
+                document.getElementById('colorInputs').style.display = 'flex';
+                handleInputEvents(Sec2Inp);
+
+            } else if (Style[i].value === 'border') {
+                Sec2Inp = document.querySelectorAll('.borderClass  input');
+                document.getElementById('borderInputs').style.display = 'flex';
+                handleInputEvents(Sec2Inp);
+
+            } else if (Style[i].value === 'box-shadow') {
+                Sec2Inp = document.querySelectorAll('.boxShadowClass  input');
+                document.getElementById('boxShadowInputs').style.display = 'flex';
+                handleInputEvents(Sec2Inp);
+
+            } else if (Style[i].value === 'display') {
+                Sec2Inp = document.querySelectorAll('.displayClass  button');
+                document.getElementById('displayButtons').style.display = 'flex';
+                handleDisplayEvents(Sec2Inp);
+
+            } else if (Style[i].value === 'flex') {
+                Sec2Inp = document.querySelectorAll('.flexClass input');
+                document.getElementById('flexInputs').style.display = 'flex';
+                handleInputEvents(Sec2Inp);
+
+            } else if (Style[i].value === 'position') {
+                Sec2Inp = document.querySelectorAll('.positionClass  button');
+                document.getElementById('positionButtons').style.display = 'flex';
+                handleDisplayEvents(Sec2Inp);
+
+            } else if (Style[i].value === 'overflow') {
+                Sec2Inp = document.querySelectorAll('.overflowClass button');
+                document.getElementById('overflowButtons').style.display = 'flex';
+                handleDisplayEvents(Sec2Inp);
+
+            } else if (Style[i].value === 'text') {
+                Sec2Inp = document.querySelectorAll('.textClass  input');
+                document.getElementById('textInputs').style.display = 'flex';
+                handleInputEvents(Sec2Inp);
+
+            } else if (Style[i].value === 'animation') {
+                Sec2Inp = document.querySelectorAll('.animationClass  input');
+                document.getElementById('animationInputs').style.display = 'flex';
+                handleInputEvents(Sec2Inp);
+
+            } else if (Style[i].value === 'misc') {
+                Sec2Inp = document.querySelectorAll('.miscClass  input');
+                document.getElementById('miscInputs').style.display = 'flex';
+                handleInputEvents(Sec2Inp);
+
+            } else if (Style[i].value === 'list-style') {
+                Sec2Inp = document.querySelectorAll('.listClass input');
+                document.getElementById('listStyleInputs').style.display = 'flex';
+                handleInputEvents(Sec2Inp);
+            }
+
+            event.stopPropagation();
+        });
+    }
+
+})
+
+// Function to handle input events for number/text inputs
+function handleInputEvents(inputs, unit = '') {
+    for (let j = 0; j < inputs.length; j++) {
+        inputs[j].addEventListener('input', (event) => {
+            let str1 = inputs[j].id;
+            let str2 = inputs[j].value + unit;
+            setStyle(str1, str2);
+            event.stopPropagation();
+        });
+    }
+}
+
+// Function to handle display events for buttons
+function handleDisplayEvents(buttons) {
+    for (let j = 0; j < buttons.length; j++) {
+        buttons[j].addEventListener('click', (event) => {
+            let str1 = "display"; // Property name
+            let str2 = buttons[j].value; // Value from button
+            setStyle(str1, str2);
+            event.stopPropagation();
+        });
+    }
+}
+
+
+
+
+function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section.style.display === "none" || section.style.display === "") {
+        section.style.display = "block"; // or "flex" based on your layout
+    } else {
+        section.style.display = "none";
+    }
+}
+
+
+
+
+document.getElementById('html').addEventListener('click', () => {
+    document.getElementsByClassName('cssBtn')[0].style.display = 'none';
+    document.getElementsByClassName('htmlBtn')[0].style.display = 'grid'
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+colorpicker.addEventListener('input', () => {
+    activeEl.style.background = colorpicker.value;
+
+})
+
 
 let deletBtn = document.getElementById('delete');
 
-function deleteElement(activeEl){
+function deleteElement(activeEl) {
     if (activeEl != boxsect) {
         // document.removeChild(activeEl);
         let idd = activeEl.id;
@@ -514,7 +750,7 @@ function deleteElement(activeEl){
     }
 }
 
-deletBtn.addEventListener('click' , ()=>{
+deletBtn.addEventListener('click', () => {
     deleteElement(activeEl);
     activeEl = boxsect;
     adjSlider(activeEl);
@@ -526,8 +762,131 @@ deletBtn.addEventListener('click' , ()=>{
 
 
 
+let belowBtn = document.getElementsByClassName('belowBtn');
+let activeBelowBtn = belowBtn[0]; // Assume first button is active by default
+
+for (let i = 0; i < belowBtn.length; i++) {
+
+    belowBtn[i].addEventListener('click', () => {
+
+        let addf = belowBtn[i].id;
+        let specifier = addf + activeEl[belowBtn[i].value]; // Assuming activeEl exists and has valid data
 
 
+        if (belowBtn[i].id === '.') {
+            specifier = addf + activeEl[belowBtn[i].value][1];
+        } else if (belowBtn[i].id === 'sib') {
+            specifier = ':scope > *';
+
+        }
+
+        // If there's an active button, remove the 'activeBtn' class from it
+        if (activeBelowBtn) {
+            activeBelowBtn.classList.remove('activeBtn');
+        }
+
+        // Set the newly clicked button as active and add the 'activeBtn' class
+        belowBtn[i].classList.add('activeBtn');
+        activeBelowBtn = belowBtn[i];
+
+        // Apply styling or observe style changes based on the specifier
+        copyStyles(specifier);
+        observeStyleChanges(specifier, belowBtn[i]);
+    });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+let sib = document.getElementById('sibling');
+
+let sameTag = document.getElementById('sameTag');
+let sameId = document.getElementById('sameId');
+let sameClass = document.getElementById('sameClass');
+
+// sameTag.addEventListener('click', () => {
+//     copyStyles(activeEl.tagName);
+//     // activeEl.addEventListener('click', () => {
+//     //     setStyle();
+//     // })
+//     observeStyleChanges(activeEl.tagName);
+
+
+
+//     let sameTags = document.querySelectorAll(`#boxesSection ${activeEl.tagName}`);
+//     for (let i = 4; i < sameTags.length; i++) {
+//         observeStyleChanges();
+//     }
+
+// });
+
+
+// sameClass.addEventListener('click', () => {
+//     copyStyles(`.${activeEl.classList[1]}`);
+//     observeStyleChanges(`.${activeEl.classList[1]}`);
+// });
+
+
+
+
+
+function copyStyles(specifier) {
+    let i = 0;
+    let sameTags = boxsect.querySelectorAll(`${specifier}`);
+    if (specifier === ':scope > *') {
+        i = 4;
+    }
+
+    for (i; i < sameTags.length; i++) {
+        var container1 = activeEl;
+        var container2 = sameTags[i];
+
+        // Loop through all styles of container1
+        for (let i = 0; i < container1.style.length; i++) {
+            let styleProperty = container1.style[i]; // Get the style property name
+            container2.style[styleProperty] = container1.style[styleProperty]; // Copy the style value
+        }
+
+    }
+}
+
+
+// Function to change styles (simulating user input or dynamic changes)
+
+// Function to listen for style changes
+function observeStyleChanges(specifier, btn) {
+    const container = activeEl;
+
+    // Create a MutationObserver instance
+    const observer = new MutationObserver(function (mutationsList, observer) {
+        mutationsList.forEach(function (mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'style' && btn.classList.value.match('activeBtn')) {
+                //   alert('The style of the container has changed!');
+                copyStyles(specifier);
+            }
+        });
+    });
+
+    // Start observing the container for attribute changes (styles are attributes)
+    observer.observe(container, { attributes: true });
+}
+
+// Call the function to observe style changes
+
+
+
+// Implement same style of class in aone css selector
+function ClassHackerStyling(element, clas) {
+
+}
 
 
 
