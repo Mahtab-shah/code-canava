@@ -1,77 +1,492 @@
-
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
+    background: linear-gradient(180deg, #ff04ff, #53f466);
     margin: 0;
-    padding: 20px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* border: 3px solid yellow; */
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    /* border: 3px solid rgb(255, 0, 0); */
+
 }
 
 #controls {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-right: 20px;
+    width: 400px;
+    /* border: 3px solid rgb(30, 0, 255); */
+
 }
+
+
+.Generate {
+    border: 1px solid rgba(255, 255, 255, 0.151);
+    margin-top: 3px;
+    background-color: #acb0b4;
+}
+
+#generateCode {
+    background-color: #2ff239;
+    height: 40px;
+    width: 100%;
+    margin: auto;
+}
+
+#controls h2 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+#switch {
+    display: flex;
+    height: 24px;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+h2 {
+    margin: 0;
+}
+
+
+.sec1 {
+    max-height: 61vh;
+    display: grid;
+}
+
+#allBtn,
+.sec2 {
+    margin: 0 auto;
+    border: 1px solid #cccccc3d;
+    text-align: center;
+    grid-template-columns: 100px 100px 100px;
+    gap: 10px;
+    margin-top: 4px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.section::-webkit-scrollbar {
+    width: 8px;
+    margin: 4px 0px;
+}
+
+.section::-webkit-scrollbar-thumb {
+    background-color: #69667c;
+    margin: 4px 0px;
+}
+
+.section::-webkit-scrollbar-thumb:hover {
+    background-color: #59585d;
+}
+
+.section::-webkit-scrollbar-track {
+    background-color: #403655;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 40px;
+}
+
+.btn:hover {
+    background-color: #0ad615;
+}
+
+
+
+
+
+
+
+
+
+.sec22 {
+    max-height: 20vh;
+    overflow-y: auto;
+}
+
+
+.sec2 {
+    display: none;
+    overflow-y: auto;
+    flex-direction: column;
+}
+
+.sec2 input {
+    height: 30px;
+}
+
+.h3 {
+    height: 30px;
+}
+
+h3 {
+    margin: 0 auto;
+}
+
+.classflex {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    gap: 10px;
+}
+
+
+#designing {
+    padding: 2px 10px;
+    border-top-right-radius: 0;
+    /* border: 3px solid rgb(30, 0, 255); */
+
+}
+
+
+#designing {
+    width: 100%;
+    flex-grow: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* min-width: 600px; */
+}
+
 
 #designingArea {
-    width: 1100px; /* Constant width for the design area */
-    height: 630px; /* Constant height for the design area */
+    flex-grow: 1;
+    height: 74vh;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid yellow; */
+    background-color: rgb(186, 186, 186);
+}
+
+
+.relaDiv {
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    min-width: 800px;
+}
+
+
+.vertical-slider {
+    writing-mode: vertical-lr;
+    width: 2px;
+    height: 560px;
+    appearance: none;
+    background-color: #a8afba;
+    padding: -10px 0;
+}
+
+#sliderLeft1::-webkit-slider-thumb {
+    appearance: none;
+    width: 0;
+    height: 0;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-left: 18px solid #0a10d3;
+    cursor: pointer;
+    position: relative;
+}
+
+#sliderRight1::-webkit-slider-thumb {
+    appearance: none;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    position: relative;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-right: 18px solid #0d00fc;
+}
+
+.horizontal-slider {
+    margin: 0 42px;
+    appearance: none;
+    height: 2px;
+    background-color: #1e00ff;
+}
+
+#sliderTop1::-webkit-slider-thumb,
+#sliderBottom1::-webkit-slider-thumb {
+    appearance: none;
+    width: 1px;
+    height: 1px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    cursor: pointer;
+    position: relative;
+}
+
+#sliderTop1::-webkit-slider-thumb {
+    border-top: 18px solid #0400ff;
+}
+
+#sliderBottom1::-webkit-slider-thumb {
+    border-bottom: 18px solid #2b00ff;
+}
+
+.thumb-line {
+    background-color: rgba(30, 0, 255, 0.969);
+    z-index: 500;
+}
+
+
+
+
+
+#boxesSection {
+    flex-grow: 1;
+    min-width: 400px;
+    position: relative;
+    overflow-y: auto;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    border: 1px solid black;
+    /* display: flex; */
+}
+
+
+
+.bot {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.botch {
+    /* height: 200px; */
+    width: 100%;
+    background-color: #232241;
     padding: 10px;
-    border: 1px solid #ccc;
-    position: relative; /* Position relative for absolute positioned boxes */
-    overflow: hidden; /* Prevent overflow from boxes */
+    gap: 10px;
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+
 }
 
-.box {
-    width: 10%; /* Set box width relative to the design area */
-    height: 10%; /* Set box height relative to the design area */
-    border: 1px solid #000;
-    background-color: #ADD8E6;
-    position: absolute; /* Position absolute for ease of placement */
-    box-sizing: border-box; /* Include padding and border in width and height */
+
+@media (max-width: 480px) {
+    #allBtn {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
 }
 
-.resize-handle {
-    width: 10px;
-    height: 10px;
-    background-color: #000;
-    position: absolute;
+
+.botch>div {
+    display: flex;
+    flex-direction: column;
 }
 
-.resize-handle.nw {
-    top: -5px;
-    left: -5px;
-    cursor: nw-resize;
+.botch input , .botch > button {
+    margin: 5px;
+    height: 20px;
+    width: 70px;
 }
 
-.resize-handle.ne {
-    top: -5px;
-    right: -5px;
-    cursor: ne-resize;
+label {
+    margin-left: 6px;
+    display: none;
 }
 
-.resize-handle.sw {
-    bottom: -5px;
-    left: -5px;
-    cursor: sw-resize;
-}
 
-.resize-handle.se {
-    bottom: -5px;
-    right: -5px;
-    cursor: se-resize;
+.active {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 3px goldenrod;
 }
 
 #codeOutput {
-    border: 1px solid #000;
-    padding: 10px;
-    background-color: #f5f5f5;
-    white-space: pre-wrap; /* Preserve formatting */
+    margin: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 7px;
+    background-color: #232241;
 }
 
-.relaDiv {
-    border: 2px solid;
-    height: 560px;
+#delete {
+    background-color: rgba(255, 0, 0, 0.711);
+}
+
+.marginClass {
+    display: none;
+}
+
+.styleBtn {
+    display: contents;
+}
+
+
+.cssBtn {
+    display: none;
+}
+
+
+
+
+@media((min-width: 900px)and (max-width: 1468px)) {
+
+    #controls {
+        width: 200px;
+    }
+
+    #allBtn {
+        grid-template-columns: 1fr 1fr;
+        width: 98%;
+        padding: 1%;
+
+    }
+
+    .btn{
+        padding: 2px;
+        font-size: 11px;
+        height: 30px;
+    }
+
+    #designingArea {
+        height: 400px;
+        min-width: 10px;
+        margin: 0;
+        /* border: 3px solid rgb(0, 255, 38); */
+
+    }
+
+    #controls {
+        width: 280px;
+        /* margin: 10px auto; */
+        /* background-color: red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2px auto;
+        /* width: 100px; */
+        /* border: 3px solid black; */
+
+    }
+.Generate{
     width: 100%;
-    position: relative; /* Make it relative for absolute positioning of boxes */
+}
+
+   
+}
+
+
+
+@media((min-width: 100px)and (max-width: 900px)) {
+
+    *{
+        margin: 0;
+        padding: 0;
+
+    }
+    #controls {
+        width: 100%;
+        /* margin: 10px auto; */
+        /* background-color: red; */
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        margin: 2px auto;
+        /* width: 100px; */
+        /* border: 3px solid black; */
+
+    }
+
+    .container {
+        flex-direction: column-reverse;
+        /* border: 3px solid black; */
+        width: 100%;
+    }
+
+    #allBtn {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        /* background-color: #0400ff; */
+
+
+
+
+    }
+
+    .botch{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .botch label{
+        display: none;
+    }
+
+    .botch input {
+        margin: 5px;
+        height: 16px;
+        width: 60px;
+        font-size: 10px;
+    }
+
+    #designing {
+        /* border: 2px solid yellow; */
+        width: 100%;
+        padding: 0;
+    }
+
+    #designingArea {
+        height: 300px;
+        min-width: 10px;
+        margin: 0;
+        /* border: 3px solid rgb(0, 255, 38); */
+
+    }
+
+    .bot {
+        height: fit-content;
+        min-width: 90px;
+    }
+
+
+    #boxesSection {
+        min-width: 90px;
+        margin: 0;
+        /* border: 3px solid red; */
+    }
+
+
+
+
+    #allBtn,
+    .sec2 {
+        margin: 0 auto;
+        border: 1px solid #cccccc3d;
+        text-align: center;
+        margin-top: 4px;
+        overflow-y: auto;
+        margin-bottom: 10px;
+        width: 97.8%;
+        padding: 1%;
+    }
+
+    .btn{
+        padding: 2px;
+        font-size: 11px;
+        height: 30px;
+    }
 }
