@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layout Designer with Double Sliders and Lines</title>
+
     <link rel="stylesheet" href="codeCanava.css">
 </head>
 
@@ -17,6 +20,7 @@
                 <h2>Generated Code</h2>
                 <button id="generateCode">Generate Code</button>
             </div>
+
             <div id="switch">
                 <h2>Controls</h2>
                 <button id="html">HTML</button>
@@ -25,6 +29,7 @@
 
 
             </div>
+
             <div class="section sec1 htmlBtn" id="allBtn">
 
                 <button class="btn" id="bgcolor"><input type="color" name="" id="bgcolor1" value="#f31115">
@@ -326,71 +331,35 @@
             <div id="designingArea">
 
 
-                <div id="top">
-
-                    <input type="range" min="0" max="600" value="0" class="horizontal-slider" id="sliderTop1">
-
-                </div>
-
-                <div class="relaDiv">
-                    <div id="left"> l
-                        <input type="range" min="0" max="600" value="0" class="vertical-slider" id="sliderLeft1">
-
-                    </div>
+               
 
                     <div id="boxesSection" class="section">
-
-                        <div1 id="thumbLineTop" class="thumb-line"></div1>
-                        <div1 id="thumbLineLeft" class="thumb-line"></div1>
-                        <div1 id="thumbLineRight" class="thumb-line"></div1>
-                        <div1 id="thumbLineBottom" class="thumb-line"></div1>
-
                     </div>
 
-                    <div id="right"> r
-                        <input type="range" min="0" max="600" value="100" class="vertical-slider" id="sliderRight1">
-                    </div>
-                </div>
-
-                <div id="bottom">
-                    <input type="range" min="0" max="600" value="560" class="horizontal-slider" id="sliderBottom1">
-                </div>
+                  
             </div>
 
             <div class="bot">
 
                 <div class="botch">
-
-
-                    <!-- <div class="styleBtn"> -->
-                    <!-- <div><button class="btn belowBtn" id="i" value="">Individual styling </button></div> -->
-                    <div> <button class="btn belowBtn" id="" value="id">Parent Element</button></div>
-                    <div> <button class="btn belowBtn" id="" value="id">Sibling Element</button></div>
-                    <div> <button class="btn belowBtn" id="" value="id">Child Element</button></div>
-                    <div><button class="btn belowBtn" id="sib" value="">Sibling styling </button></div>
-                    <div> <button class="btn belowBtn" id="" value="tagName">Tag wise styling </button></div>
-                    <div><button class="btn belowBtn" id="." value="classList">Class wise styling </button></div>
-                    <div> <button class="btn belowBtn" id="#" value="id">Individual styling </button></div>
-                    <!-- </div> -->
-
                     <div>
                         <button>
                             <label for="attr">Set Attribute</label>
-                            <input type="text" id="attr">
+                            <input type="text" id="attr" placeholder="Set Attribute">
                         </button>
                     </div>
                     <div>
                         <button>
                             <label for="tag">Set Tag</label>
 
-                            <input type="text" id="tag">
+                            <input type="text" id="tag" placeholder="Set Tag">
                         </button>
                     </div>
                     <div>
                         <button>
                             <label for="style">Set style</label>
 
-                            <input type="text" id="style">
+                            <input type="text" id="style" placeholder="set style">
                         </button>
 
                         <!-- <input type="text"  name="" id=""> -->
@@ -401,7 +370,7 @@
                         <button>
                             <label for="style">Delete style</label>
 
-                            <input type="text" id="delstyle">
+                            <input type="text" id="delstyle" placeholder="delete style">
 
                         </button>
                     </div>
@@ -410,7 +379,7 @@
                         <button>
                             <label for="style">Delete Attribute</label>
 
-                            <input type="text" id="delAttr">
+                            <input type="text" id="delAttr" placeholder="delete Attribute">
 
                         </button>
                     </div>
@@ -419,10 +388,23 @@
                         <button>
                             <label for="style">Delete Tag</label>
 
-                            <input type="text" id="delTag">
+                            <input type="text" id="delTag" placeholder="delete Tag">
                         </button>
 
                     </div>
+
+                    <!-- <div class="styleBtn"> -->
+                    <!-- <div><button class="btn belowBtn" id="i" value="">Individual styling </button></div> -->
+                    <div> <button class="btn belowBtn" id="" value="id" aria-placeholder="Parent Element">Parent Element</button></div>
+                    <div> <button class="btn belowBtn" id="" value="id">Sibling Element</button></div>
+                    <div> <button class="btn belowBtn" id="" value="id">Child Element</button></div>
+                    <div><button class="btn belowBtn" id="sib" value="">Sibling styling </button></div>
+                    <div> <button class="btn belowBtn" id="" value="tagName">Tag wise styling </button></div>
+                    <div><button class="btn belowBtn" id="." value="classList">Class wise styling </button></div>
+                    <div> <button class="btn belowBtn" id="#" value="id">Individual styling </button></div>
+                    <!-- </div> -->
+
+             
 
                 </div>
 
