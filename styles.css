@@ -119,17 +119,15 @@ body {
 
 }
 
-/* Header Styling */
 .mobile-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    /* border-bottom: 1px solid #bbb */
+    border-bottom: 1px solid #bbb
 
 }
 
-/* Logo Styling */
 .logo {
     font-size: 1.4em;
     font-weight: bold;
@@ -137,7 +135,6 @@ body {
 
 }
 
-/* Menu Icon Styling */
 .menu-icon {
     display: flex;
     flex-direction: column;
@@ -145,13 +142,9 @@ body {
 
 .line {
     width: 25px;
-    /* Width of the lines */
     height: 3px;
-    /* Height of the lines */
     background-color: #4b5563;
-    /* Line color */
     margin: 3px 0;
-    /* Space between lines */
 }
 
 .mobile-container h2 {
@@ -166,7 +159,7 @@ body {
 }
 
 .mobile-screen {
-    /* border: 1px solid rgba(0, 0, 0, 0.166); */
+    border: 1px solid rgba(0, 0, 0, 0.166);
     border-radius: 8px;
     padding: 10px;
 }
@@ -174,9 +167,7 @@ body {
 
 #container2 {
     position: absolute;
-    /* Still absolute for overlap */
     top: 120px;
-    /* Adjusted for overlap */
     left: 80px;
     width: 280px;
     height: 360px;
